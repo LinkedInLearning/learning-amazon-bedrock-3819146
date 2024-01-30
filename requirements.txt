@@ -1,0 +1,5 @@
+boto3==1.34.17
+langchain==0.1.0
+pypdf==3.17.4
+faiss-cpu==1.7.4
+streamlit==1.30.0

@@ -15,11 +15,12 @@ def config_llm():
     client = boto3.client('bedrock-runtime')
 
     model_kwargs = { 
-        "maxTokens": 512,
-        "temperature":0.0,  
+        "max_tokens_to_sample": 512,
+        "temperature":0.1,  
         "topP":1
     }  
-    model_id = "ai21.j2-mid-v1"
+
+    model_id = "anthropic.claude-instant-v1"
     llm = Bedrock(model_id=model_id, client=client)
     llm.model_kwargs = model_kwargs
     return llm

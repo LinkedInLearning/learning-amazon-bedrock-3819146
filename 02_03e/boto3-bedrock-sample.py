@@ -1,12 +1,6 @@
 #Imports
 import boto3
 import json
-import os
-
-#outputting variables
-print (f'AWS_ACCESS_KEY_ID : {os.environ["AWS_ACCESS_KEY_ID"]}')
-print (f'AWS_SECRET_ACCESS_KEY : {os.environ["AWS_SECRET_ACCESS_KEY"]}')
-print (f'AWS_DEFAULT_REGION : {os.environ["AWS_DEFAULT_REGION"]}')
 
 #Create the bedrock client
 bedrock = boto3.client('bedrock-runtime')

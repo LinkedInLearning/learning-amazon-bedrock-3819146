@@ -18,15 +18,15 @@ contentType = "application/json"
 
 #Configuring parameters to invoke the model
 body = json.dumps({
-    "inputText": prompt_data, 
-    "textGenerationConfig": {
-         "maxTokenCount" : 1000
-    }
+  "inputText" : prompt_data,
+  "textGenerationConfig" : {
+    "maxTokenCount" : 1000
+  }
 })
 
 #Invoke the model
 response = bedrock.invoke_model(
-    body=body, modelId=modelId, accept=accept, contentType=contentType
+  body = body, modelId = modelId, accept = accept, contentType = contentType
 )
 
 #Parsing and displaying the output

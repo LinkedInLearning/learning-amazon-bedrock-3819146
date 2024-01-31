@@ -6,7 +6,6 @@ from langchain.prompts.prompt import PromptTemplate
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.vectorstores import FAISS
 from langchain.chains import LLMChain
-import os
 
 #Define vectorstore
 global vectorstore_faiss
@@ -64,15 +63,16 @@ Assistant:
 
 #Configure prompt template
 prompt_template = PromptTemplate(
-            input_variables=[ 'input','info'], 
-            template=my_template)
+    input_variables=['input', 'info'],
+    template= my_template
+)
 
 #Create llm chain
 question_chain = LLMChain(
-                llm=llm, 
-                prompt=prompt_template, 
-                output_key="answer",
-                )
+    llm = llm,
+    prompt = prompt_template,
+    output_key = "answer"
+)
 
 #Get question, peform similarity search, invoke model and return result
 while True:
@@ -82,7 +82,7 @@ while True:
     info = vector_search(question)
 
     #invoke the model, providing additional context
-    output = question_chain.invoke({'input':question, 'info':info})
+    output = question_chain.invoke({'input' : question,  'info' : info})
 
     #display the result
     print(output['answer'])

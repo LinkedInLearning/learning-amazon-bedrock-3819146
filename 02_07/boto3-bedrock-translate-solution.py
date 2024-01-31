@@ -6,9 +6,9 @@ import json
 client = boto3.client(service_name='bedrock-runtime')
 
 #Construct the body
-#Specify your prompt
+#specify your prompt
 body = json.dumps({
-    "prompt": "Translate to french: 'Learning about generative ai is fun and exciting with Amazon Bedrock'", 
+    "prompt": "Translate to french: 'Learning about generative ai is fun and exciting with Amazon Bedrock' ", 
     "maxTokens": 200,
     "temperature": 0.5,
     "topP": 0.5

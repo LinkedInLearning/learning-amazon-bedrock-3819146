@@ -1,0 +1,1 @@
+We want to use Claude to build a conversational chatbot application that incorporates text generation, complex reasoning and analysis. We would like to implement RAG architecture and use Claude to help with summarizing content.
